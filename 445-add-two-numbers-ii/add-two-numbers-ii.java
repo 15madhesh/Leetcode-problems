@@ -36,7 +36,6 @@ class Solution {
             carry = sum / 10;
         }
         String result = res.reverse().toString();
-        System.out.println(result);
         ListNode head = new ListNode();
         ListNode temp = head;
         int k = 0;
