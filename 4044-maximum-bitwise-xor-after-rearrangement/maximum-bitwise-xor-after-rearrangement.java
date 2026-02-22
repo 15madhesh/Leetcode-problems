@@ -21,23 +21,14 @@ class Solution {
                 }
             } else {
                 if(cz > 0){
-                    sb.append('0');
+                    sb.append('1');
                     cz--;
                 } else {
-                    sb.append('1');
+                    sb.append('0');
                     co--;
                 }
             }
         }
-        t = sb.toString();
-        StringBuilder res = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            if(s.charAt(i) == t.charAt(i)){
-                res.append('0');
-            }else{
-                res.append('1');
-            }
-        }
-        return res.toString();
+        return sb.toString();
     }
 }
