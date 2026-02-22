@@ -6,7 +6,6 @@ class Solution {
             for(int j = 0;j < words[i].length();j++){
                 val += weights[words[i].charAt(j) - 'a'];
             }
-            System.out.println(val);
             sb.append((char)('z' -  (val % 26)));
         }
         return sb.toString();
