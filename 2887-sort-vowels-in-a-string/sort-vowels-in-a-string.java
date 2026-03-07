@@ -4,7 +4,6 @@ class Solution {
         for(int i = 0;i < s.length();i++){
             if(("aeioueAEIOU".contains(String.valueOf(s.charAt(i))))){
                 lt.add(s.charAt(i));
-                System.out.println(s.charAt(i));
             }
         }
         Collections.sort(lt);
