@@ -1,17 +1,19 @@
 class Solution {
     public String replaceWords(List<String> dictionary, String sentence) {
+        Set<String> set = new HashSet<>(dictionary);
         String[] words = sentence.split(" ");
-        String res = "";
-        for(int i = 0;i < words.length;i++){
-            for(String dict : dictionary){
-                if(dict.length() >= words[i].length()){
-                    continue;
+        StringBuilder sb = new StringBuilder();
+        for(String word : words){
+            int i = 0;
+            while(i <= word.length()){
+                String add = word.substring(0 , i++);
+                if(set.contains(add)){
+                    sb.append(" ").append(add);
+                    break;
                 }
-                if(words[i].substring(0,dict.length()).equals(dict)){
-                    words[i] = dict;
-                }
+                if(i == word.length() + 1) sb.append(" ").append(add);
             }
         }
-        return String.join(" ",words);
+        return sb.toString().trim();
     }
 }
