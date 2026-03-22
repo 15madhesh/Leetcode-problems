@@ -1,17 +1,18 @@
 class Solution {
     public boolean uniformArray(int[] nums1) {
-        int min =  9999;
-        boolean odd = false;
+        int minodd =  Integer.MAX_VALUE;
+        int mineven = Integer.MAX_VALUE;
+        boolean odd = false,even = false;
         for(int a : nums1){
             if(a % 2 == 1){
                 odd = true;
-                min = Math.min(min , a);
+                minodd = Math.min(minodd , a);
+            } else{
+                even = true;
+                mineven = Math.min(mineven ,a);
             }
         }
-        if(!odd) return true;
-        for(int a : nums1){
-            if(a % 2 == 0 && min > a) return false;
-        }
-        return true;
+        if(!odd || !even) return true;
+        return minodd < mineven;
     }
 }
