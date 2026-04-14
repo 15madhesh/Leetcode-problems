@@ -1,6 +1,6 @@
 class Solution {
     public String multiply(String num1, String num2) {
-        if((num1.length() == 1 && num1.charAt(0) == '0') || (num2.length() == 1 && num2.charAt(0) == '0')) return "0";
+        if (num1.equals("0") || num2.equals("0")) return "0";
         StringBuilder sb = new StringBuilder();
         int n1 = num1.length();
         int n2 = num2.length();
@@ -21,7 +21,6 @@ class Solution {
             }
             if(v != 0) st += v;
             l = Math.max(l, st.length());
-            //System.out.println(st + l);
             str[n2 - 1 - i] = st;
             i--;
         }
@@ -31,7 +30,6 @@ class Solution {
                 str[i] += '0';
                 j++;
             }
-            //System.out.println(str[i]);
         }
         int s = 0;
         for(i = 0; i < l;i++){
@@ -40,7 +38,6 @@ class Solution {
             }
             sb.append(s % 10);
             s /= 10;
-            //System.out.println(s);
         }
         if(s != 0){
             sb.append(s);
