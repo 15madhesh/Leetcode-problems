@@ -3,7 +3,10 @@ class Solution {
         int ct = 0;
         Map<Integer,List<Integer>> hm = new HashMap<>();
         for(int i = 0;i < nums.length;i++){
-            hm.computeIfAbsent(nums[i], k -> new ArrayList<>()).add(i);
+            if(!hm.containsKey(nums[i])){
+                hm.put(nums[i] , new ArrayList<>());
+            }
+            hm.get(nums[i]).add(i);
         }
         for(List<Integer> lt : hm.values()){
             if(lt.size() >= 3){
