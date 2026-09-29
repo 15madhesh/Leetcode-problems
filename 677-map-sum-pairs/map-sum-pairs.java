@@ -11,7 +11,11 @@ class MapSum {
     public int sum(String prefix) {
         int sum = 0;
         for(Map.Entry<String, Integer> map : hm.entrySet()) {
-            if(map.getKey().startsWith(prefix)) sum += map.getValue();
+            String key = map.getKey();
+            int value = map.getValue();
+            if(key.startsWith(prefix)){
+                sum += value;
+            }
         }
         return sum;
     }
